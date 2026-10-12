@@ -1,0 +1,435 @@
+/* --- Imports & Resets --- */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+@import url('https://fonts.googleapis.com/css2?family=Gveret+Levin&display=swap');
+@import url('https://use.typekit.net/your-unique-kit-id.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100%;
+    height: 300%;
+}
+
+body {
+    padding-top: 6vw; 
+}
+
+html {
+    scroll-behavior: smooth;
+    background: #E6E6E6;
+}
+
+[id] {
+    scroll-margin-top: 6vw;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 15px; }
+::-webkit-scrollbar-track { background: #7B9669; }
+::-webkit-scrollbar-thumb {
+    background: #404E3B;
+    border-radius: 30px;
+}
+
+/* --- Typography & Links --- */
+li, a, button, p, h2, h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+li, a, button {
+    font-size: 1.5vw;
+    color: #404E3B;
+    text-decoration: none;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 0 10vw 1vw 10vw;
+    margin: auto;
+}
+
+/* --- Header & Nav --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    
+    padding: 0.5vw 5%; 
+    background: rgb(186, 200, 177, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.nav_links { list-style: none; }
+.nav_links li { display: inline-block; padding: 0 1.25vw; }
+.nav_links li a { transition: color 0.3s ease; }
+.nav_links li a:hover { color: #E6E6E6; }
+
+/* --- Buttons --- */
+button {
+    padding: 0.6vw 1.5vw;
+    background-color: #7B9669;
+    border: none;
+    border-radius: 3vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; 
+    width: fit-content;    
+    margin: 1vw auto;      
+}
+
+button:hover {
+    background-color: #BAC8B1;
+}
+
+/* --- Animations & Headings --- */
+.intro {
+    height: 15vw;
+    background: #E6E6E6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    border: 1.5vw outset #7B9669;
+}
+
+h1 {
+    font-family: "Gveret Levin", sans-serif;
+    font-size: 6vw;
+    margin: auto;
+}
+
+h1 span {
+    background: linear-gradient(90deg, #7B9669, #BAC8B1, #7B9669);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip { to { background-position: 200% center; } }
+
+h2 {
+    margin: auto;
+    font-size: 2.2vw;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: solid 3px #404E3B;
+    animation: animated-text 4s steps(36, end) 1s 1 normal both, 
+               animated-cursor 600ms steps(36, end) infinite;
+}
+
+@keyframes animated-text { from { width: 0; } to { width: 59%; } }
+@keyframes animated-cursor { from { border-right-color: #404E3B; } to { border-right-color: transparent; } }
+
+/* --- Sections & Layout --- */
+.about {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4vw;
+}
+
+h3 { font-size: 4vw; padding-bottom: 2vw; margin: auto; }
+
+#box {
+    width: 60%;
+    height: 20vw;
+    background-color: #BAC8B1;
+    border: 1vw solid #7B9669;
+    display: flex;
+    justify-content: center;
+    margin: 1vw auto 0 3vw;
+    cursor: pointer;
+}
+
+#box:hover { cursor: url('img/thumbtack2.png'), auto; }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw; 
+    margin-left: 14vw;
+    margin-top: 10vw;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 1vw;
+    margin-right: 12vw;
+}
+
+/* Container Layout */
+.experience {
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 4vw; 
+    margin-bottom: 1.5rem; 
+    color: black;
+}
+
+.experience-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 4vw;
+    flex-wrap: wrap;
+}
+
+.details-container {
+    flex: 1 1 30rem;
+    max-width: 45vw;
+    min-height: 15rem;
+    padding: 1.2rem; 
+    border-radius: 1.5rem;
+    border: 0.5vw solid transparent;
+    background-color: #BAC8B1;
+    border: 0.75vw solid #7B9669;
+}
+
+.experience-sub-title {
+    color: black;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem; 
+    margin-bottom: 2rem; 
+}
+
+.article-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem 1.5rem; 
+    justify-items: start; 
+    padding: 0rem 0;
+}
+
+article {
+    display: flex;
+    align-items: flex-start; 
+    gap: 0.8rem;
+    width: 100%; 
+}
+
+.icon {
+    height: 1.5rem; 
+    width: 1.5rem;
+    margin-top: 2px; 
+}
+
+article div {
+    display: flex;
+    flex-direction: column;
+}
+
+article h4 {
+    font-size: 1.5rem; 
+    margin: 0;
+    line-height: 1.1; 
+}
+
+article p {
+    color: black;
+    margin: 0 0 -2rem -9.2rem;
+    font-size: 1.25rem; 
+    line-height: 1.1; 
+}
+
+/* ===================================================
+   STANDARDIZED AWARDS SLIDER SECTION (ALL VW UNITS)
+   =================================================== */
+
+.awards-section-title {
+    text-align: center;
+    font-size: 3.5vw;     
+    color: black;
+}
+
+/* 1. Main Parent Wrapper */
+.awards {
+    display: block;
+    width: 100%;
+    max-width: 90vw;      
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 2. Grid Row Container */
+.awards-full {
+    display: grid !important;
+    /* Force 6 columns of exactly equal, un-squeezable widths */
+    grid-template-columns: repeat(6, 1fr) !important; 
+    gap: 1.5vw !important;               
+    padding: 1.5vw 0;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+/* 3. Individual Column Block */
+.awards-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;    /* Centers items on a true vertical axis */
+    justify-content: flex-start !important;
+    gap: 1vw !important;             
+    width: 100% !important;            /* Takes up exactly 1/6th of the grid row */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 4. The Image Container Box */
+.awards-image-wrap {
+    width: 100% !important;
+    height: 9vw !important;            
+    overflow: hidden !important;       
+    border-radius: 0.8vw !important;   
+    margin: 0 auto !important;
+}
+
+.awards-image-wrap img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+}
+
+/* 5. The Text Block */
+.awards-card p {
+    width: 100% !important;   
+    height: auto !important;  
+    text-align: center !important; /* Forces the text to stay in the exact center */
+    margin: 0 auto !important; 
+    padding: 0 !important;
+    
+    color: black;         
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1vw !important;   /* Restored to a readable, clear text size */     
+    font-weight: 600;       
+    line-height: 1.3;       
+}
+
+
+/* ==========================================
+   PROJECTS SECTION (SIDE-BY-SIDE ACCORDION)
+   ========================================== */
+.project-folder {
+    width: 100%; 
+    max-width: 75%;
+    margin: auto;
+    margin-bottom: 3vw;
+    box-sizing: border-box;
+}
+
+.folder-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    padding: 1vw 1.5vw;
+    background-color: #7B9669; 
+    color: #E6E6E6;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3vw;
+    font-weight: 700;
+    text-align: left;
+    border: none;
+    border-radius: 0.8vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.folder-header:hover {
+    background-color: #BAC8B1; 
+}
+
+/* --- Dropdown Drawer Mechanism --- */
+.folder-content {
+    display: flex;
+    flex-direction: column; /* FIXED: Changed from justify-content: column */
+    align-items: stretch;
+    max-height: 120vw; 
+    overflow: visible;
+    background-color: transparent;
+    border-radius: 0 0 0.8vw 0.8vw;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Increased max-height boundary slightly to accommodate 3 stacked cards safely */
+.folder-content.closed {
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* --- Project Content Content Wrapper --- */
+.folder-inner {
+    display: flex;
+    flex-direction: row;    /* CHANGED: Arranges cards side-by-side */
+    flex-wrap: wrap;        /* NEW: Lets cards wrap safely instead of squishing on small screens */
+    justify-content: center;/* Centers cards horizontally in the folder row */
+    gap: 1.5vw;             /* Adds clean horizontal spacing between your project cards */
+    padding: 1.5vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Individual Project Card Boundaries --- */
+.project-card {
+    position: relative;     
+    flex: 1 1 8vw;         /* NEW: Allows cards to grow/shrink, sitting at ~20vw baseline width */
+    max-width: 25vw;        /* CHANGED: Constrains horizontal size so 3 items fit perfectly */
+    height: 18vw;           /* CHANGED: Optimized card proportions for a horizontal grid look */
+    overflow: hidden;
+    border-radius: 0.8vw;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* Guarantees no image stretching or distortion */
+    display: block;
+}
+
+/* --- Centered Text Overlay --- */
+.project-link {
+    position: absolute;  
+    top: 50%;            
+    left: 50%;           
+    transform: translate(-50%, -50%);
+    width: 85%;             /* Keeps long titles contained away from card edges */
+    padding: 1vw;
+    
+    color: white;         
+    text-decoration: none;  
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4vw;
+    font-weight: 600;       
+    text-align: center;
+    z-index: 10;             
+    background-color: rgba(0, 0, 0, 0.55); 
+    border-radius: 0.4vw;
+    box-sizing: border-box; /* Includes padding in width constraints */
+}
+
+.project-link:hover {
+    color: lightgrey;             
+    text-decoration: underline; 
+}
